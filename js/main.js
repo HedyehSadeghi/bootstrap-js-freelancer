@@ -1,25 +1,14 @@
 let arrayDiscountCodes=["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
-let discount=false;
-
 
 
 
 //-------FUNZIONI-----------
 
-function controlDiscount(discountInput){
-
-   for (i=0; i<arrayDiscountCodes.length; i++){
-        if (discountInput== arrayDiscountCodes[i]);
-        discount=true;
-        break;
-    };
-    return discount;
-
-}
-
 
 function calculateOffer(event){
     event.preventDefault();
+
+    let discount=false;
 
     
     let hours= document.getElementById("hours").value; //verificare che sia un numero
@@ -29,8 +18,18 @@ function calculateOffer(event){
     let typeOfWorkSelected = typeOfWork.options[typeOfWork.selectedIndex].value;
 
     let finalPrice=0;
-    let discountInput=document.getElementById("discount-code").value;
-    let discount= controlDiscount(discountInput);
+
+    let discountInput= document.getElementById("discount-code").value;
+    
+    for (i=0; i<arrayDiscountCodes.length; i++){
+        if (discountInput == arrayDiscountCodes[i]){
+            discount=true;
+            arrayDiscountCodes.splice(i,1);
+            break;
+        } 
+    }
+
+
 
     if (discount){
         if (typeOfWorkSelected=="1"){
