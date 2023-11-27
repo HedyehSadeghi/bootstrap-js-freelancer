@@ -3,6 +3,11 @@ let arrayDiscountCodes=["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
 
 //-------FUNZIONI-----------
+function changeColor(text){
+    text.style.color= "red";
+}
+
+
 
 
 function calculateOffer(event){
@@ -37,12 +42,14 @@ function calculateOffer(event){
             finalPrice*= 0.75;
             finalPrice= finalPrice.toFixed(2);
             console.log(finalPrice);
+            document.getElementById("price").innerHTML= "Prezzo finale: " + finalPrice + "&euro;";
         }
         else if (typeOfWorkSelected=="2"){
             finalPrice+= hours *15.3;
             finalPrice*= 0.75;
             finalPrice= finalPrice.toFixed(2);
             console.log(finalPrice);
+            document.getElementById("price").innerHTML= "Prezzo finale: " + finalPrice + "&euro;";
     
         }
         else if (typeOfWorkSelected=="3"){
@@ -50,28 +57,33 @@ function calculateOffer(event){
             finalPrice*= 0.75;
             finalPrice= finalPrice.toFixed(2);
             console.log(finalPrice);
+            document.getElementById("price").innerHTML= "Prezzo finale: " + finalPrice + "&euro;";
         }
 
     }
 
     else{
         alert("discount non valido");
+        
 
         if (typeOfWorkSelected=="1"){
             finalPrice+= hours *20.50;
             finalPrice= finalPrice.toFixed(2);
             console.log(finalPrice);
+            document.getElementById("price").innerHTML= "Prezzo finale: " + finalPrice + "&euro;";
         }
         else if (typeOfWorkSelected=="2"){
             finalPrice+= hours *15.3;
             finalPrice= finalPrice.toFixed(2);
             console.log(finalPrice);
+            document.getElementById("price").innerHTML= "Prezzo finale: " + finalPrice + "&euro;";
     
         }
         else if (typeOfWorkSelected=="3"){
             finalPrice+= hours *33.6;
             finalPrice= finalPrice.toFixed(2);
             console.log(finalPrice);
+            document.getElementById("price").innerHTML= "Prezzo finale: " + finalPrice + "&euro;";
     
         }
 
